@@ -57,8 +57,8 @@ Make sure you have the following installed on your machine:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone git@github.com:atNeerajShukla/tasks-app.git
+cd tasks-app
 ```
 
 ### Frontend Setup
@@ -108,7 +108,7 @@ cd your-repo
 
 ---
 
-## Environment Variables
+## Environment Variables (For testing and running purposes, please use my provided .env files for both the front-end and back-end.)
 
 Both the frontend and backend require environment variables to be set up for proper configuration.
 
