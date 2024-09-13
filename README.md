@@ -108,7 +108,7 @@ cd tasks-app
 
 ---
 
-## Environment Variables (For testing and running purposes, please use my provided .env files for both the front-end and back-end.)
+## Environment Variables
 
 Both the frontend and backend require environment variables to be set up for proper configuration.
 
@@ -120,7 +120,7 @@ VITE_BE_API_URL=http://localhost:5000/api
 
 - **VITE_BE_API_URL**: The base URL for the backend API.
 
-### Backend `.env` file:
+### Backend `.env` file: (Update it with .env file code that I have provided in email)
 
 ```env
 MONGO_URI=your_mongo_connection_string
