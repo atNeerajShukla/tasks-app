@@ -3,7 +3,8 @@ import { AuthProvider } from './context/AuthContext'
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import AdminPage from './pages/AdminPage'
-import TaskPage from './pages/TaskPage'
+import LoginPage from './pages/LoginPage'
+import UserPage from './pages/UserPage'
 
 function App() {
 
@@ -12,8 +13,9 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-            <Route path="/" element={<TaskPage />} />
-            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/admin-home" element={<AdminPage />} />
+            <Route path="/user-home" element={<UserPage />} />
           </Routes>
         </div>
       </Router>

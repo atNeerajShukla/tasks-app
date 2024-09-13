@@ -62,6 +62,12 @@ export const getUserTasks = async (req, res) => {
   res.json(tasks);
 };
 
+export const getUserTasksByUserId = async (req, res) => {
+  let { userId } = req.params;
+  const tasks = await Task.find({ user: userId });
+  res.json(tasks);
+};
+
 // Admin view all tasks for all users
 export const getAllTasks = async (req, res) => {
   if (!req.user.isAdmin) {

@@ -1,119 +1,161 @@
-# Task Management Application (Express, React, MongoDB)
+# Tasks App a Fullstack Project - Assignment App
 
-This repository contains a simple task management application built with Express for the backend, React (Vite) for the frontend, and MongoDB for the database. The application supports both user and admin functionalities.
-
-## Features
-
-### User Functions:
-- Create a task.
-- Update a task.
-- Delete a task.
-- View a particular task.
-- List all tasks.
-
-### Admin Functions:
-- View all users.
-- View all tasks for each user.
+This repository contains both the frontend and backend code for the project. Follow the instructions below to set up and run the project on your local machine.
 
 ## Table of Contents
-- [Installation](#installation)
-- [Backend Setup](#backend-setup)
-- [Frontend Setup](#frontend-setup)
-- [Running the Application](#running-the-application)
+
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Clone the Repository](#clone-the-repository)
+  - [Frontend Setup](#frontend-setup)
+  - [Backend Setup](#backend-setup)
 - [Environment Variables](#environment-variables)
+- [Running the Project](#running-the-project)
+
+---
+
+## Project Structure
+
+```bash
+.
+├── frontend      # React-based frontend
+└── backend       # Node.js Express backend
+```
+
+## Tech Stack
+
+- **Frontend:**
+  - React
+  - Vite
+  - TailwindCSS
+  - React Router DOM
+  - Axios
+
+- **Backend:**
+  - Node.js
+  - Express
+  - MongoDB
+  - JWT Authentication
+  - Mongoose
+
+---
 
 ## Prerequisites
 
-Before setting up the project, ensure that you have the following installed on your machine:
-- Node.js (v18 or higher)
-- npm (v8 or higher)
-- MongoDB
+Make sure you have the following installed on your machine:
 
-## Installation
+- **Node.js**: >= v16.x
+- **npm**: >= 7.x or **yarn**
+- **MongoDB Atlas** (or a local MongoDB instance)
 
-To get started with this project, clone the repository and navigate into the project directory:
+---
 
-```bash
-git clone https://github.com/your-username/task-manager-app.git
-cd task-manager-app
-```
+## Getting Started
 
-## Backend Setup
-
-### 1. Navigate to the `backend` folder:
-```bash
-cd backend
-```
-
-### 2. Install dependencies:
-```bash
-npm install
-```
-
-### 3. Create an `.env` file in the `backend` folder with the following content:
+### Clone the Repository
 
 ```bash
-MONGO_URI=your-mongodb-uri
-JWT_SECRET=your-secret-key
-PORT=5000
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
 ```
 
-Replace `your-mongodb-uri` and `your-secret-key` with your actual MongoDB connection string and JWT secret.
+### Frontend Setup
 
-### 4. Start the backend server:
-```bash
-npm run dev
-```
+1. Navigate to the frontend directory:
 
-The backend server will run on `http://localhost:5000`.
+   ```bash
+   cd frontend
+   ```
 
-## Frontend Setup
+2. Install the dependencies:
 
-### 1. Navigate to the `frontend` folder:
-```bash
-cd ../frontend
-```
+   ```bash
+   npm install
+   ```
 
-### 2. Install dependencies:
-```bash
-npm install
-```
+3. Create a `.env` file in the `frontend` directory and add the following:
 
-### 3. Create an `.env` file in the `frontend` folder with the following content:
-```bash
-REACT_APP_API_URL=http://localhost:5000/api
-```
+   ```bash
+   VITE_BE_API_URL=http://localhost:5000/api
+   ```
 
-This points the frontend to the backend API running locally.
+### Backend Setup
 
-### 4. Start the frontend development server:
-```bash
-npm run dev
-```
+1. Navigate to the backend directory:
 
-The frontend will run on `http://localhost:5173`.
+   ```bash
+   cd ../backend
+   ```
 
-## Running the Application
+2. Install the dependencies:
 
-### Backend:
-1. Ensure MongoDB is running on your machine or your MongoDB URI is correct.
-2. Start the backend using `npm run dev` in the `backend` folder.
+   ```bash
+   npm install
+   ```
 
-### Frontend:
-1. Run `npm run dev` in the `frontend` folder to start the Vite development server.
+3. Create a `.env` file in the `backend` directory and add the following:
 
-Now you can access the application via `http://localhost:5173`.
+   ```bash
+   MONGO_URI=mongodb+srv://<your-mongodb-connection-string>
+   JWT_SECRET=your_jwt_secret
+   PORT=5000
+   CORS_ORIGIN=*
+   ```
+
+   Replace `<your-mongodb-connection-string>` with your actual MongoDB URI.
+
+---
 
 ## Environment Variables
 
-### Backend `.env`:
-- `MONGO_URI`: MongoDB connection string.
-- `JWT_SECRET`: Secret key used for signing JWTs.
-- `PORT`: Port for the backend server.
+Both the frontend and backend require environment variables to be set up for proper configuration.
 
-### Frontend `.env`:
-- `REACT_APP_API_URL`: URL of the backend API (usually `http://localhost:5000/api` for local development).
+### Frontend `.env` file:
 
-## Additional Notes
-- For any errors or issues, check the logs in both the frontend and backend consoles.
-- Make sure to have MongoDB running locally or use a cloud-based MongoDB service like Atlas with the correct `MONGO_URI`.
+```env
+VITE_BE_API_URL=http://localhost:5000/api
+```
+
+- **VITE_BE_API_URL**: The base URL for the backend API.
+
+### Backend `.env` file:
+
+```env
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5000
+CORS_ORIGIN=*
+```
+
+- **MONGO_URI**: Your MongoDB connection string (use MongoDB Atlas or a local instance).
+- **JWT_SECRET**: A secret key for signing JWT tokens.
+- **PORT**: The port where the backend will run.
+- **CORS_ORIGIN**: Set to `*` to allow all origins (or specify a frontend URL if needed).
+
+---
+
+## Running the Project
+
+### Running the Frontend
+
+1. Start the development server:
+
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+
+2. Open your browser and visit `http://localhost:3000` (or the port specified by Vite).
+
+### Running the Backend
+
+1. Start the backend server:
+
+   ```bash
+   cd backend
+   npm run dev
+   ```
+
+2. The backend will run at `http://localhost:5000`.

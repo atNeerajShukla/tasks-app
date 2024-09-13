@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = import.meta.env.VITE_BE_API_URL;
 
 // Create a task
 export const createTask = async (taskData, token) => {
@@ -24,6 +24,20 @@ export const getUserTasks = async (token) => {
   return response.data;
 };
 
+// Get all tasks for the user
+export const getUserTasksByUserId = async (token, userId) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  console.log(userId);
+  const response = await axios.get(`${API_URL}/tasks/${userId}`, config);
+  return response.data;
+};
+
+
 // Get a particular task
 export const getTask = async (taskId, token) => {
   const config = {
@@ -31,7 +45,7 @@ export const getTask = async (taskId, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.get(`${API_URL}/tasks/${taskId}`, config);
+  const response = await axios.get(`${API_URL}/tasks/taskDetails/${taskId}`, config);
   return response.data;
 };
 
